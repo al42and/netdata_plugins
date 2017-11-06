@@ -27,3 +27,13 @@ Getting started on other distributions:
 
 - See instructions above, but modify them accordingly.
 
+## smartd_log
+
+The plugin itself is included in netdata, they recommend using logrotate without providing any sample. Well, here it is.
+
+Getting started on Ubuntu:
+
+- Recongifigure smartd to write csv by appending `-A /var/log/smartd` to `smartd_opts=` in `/etc/default/smartmontools` (uncomment this line if necessary).
+- Install logrotate rule: `sudo cp smartd /etc/logrotate.d/`.
+- Restart everything: `sudo systemctl restart smartd.service && sudo systemctl restart netdata.service`.
+

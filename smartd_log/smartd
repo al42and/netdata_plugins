@@ -1,0 +1,6 @@
+/var/log/smartd/*.csv {
+    weekly
+    rotate 10
+    compress
+    # Smartd reopens attribute log files on each write, so no need for pre/postrotate
+}
