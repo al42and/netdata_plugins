@@ -19,7 +19,7 @@ Getting started on Ubuntu:
 - Connect sensor to dongle (Vin to +5V, Tx to Rx, Rx to Tx, Gnd to Gnd).
 - Connect the dongle to PC.
 - Edit the last line in `mh_z19.conf` to point to the correct device node.
-- Install the plugin: `sudo cp mh_z19.chart.py /usr/lib/x86_64-linux-gnu/netdata/python.d/python_modules/third_party/ && sudo cp mh_z19.conf /etc/netdata/python.d/`.
+- Install the plugin: `sudo cp mh_z19.chart.py /usr/lib/x86_64-linux-gnu/netdata/python.d/ && sudo cp mh_z19.conf /etc/netdata/python.d/`.
 - Restart the netdata: `sudo systemctl restart netdata.service`.
 - Refresh web interface, and see two new charts.
 
