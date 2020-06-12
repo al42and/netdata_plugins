@@ -60,7 +60,7 @@ class Service(SimpleService):
         response = list(map(ord, response))
 
         if len(response) != 9:
-            self.error("Unable to get response from MH-Z19")
+            self.error("Unable to get response from MH-Z19, only {0} bytes read".format(len(response)))
             return None
 
         if not self._check_response(response):
@@ -83,5 +83,5 @@ class Service(SimpleService):
     @staticmethod
     def _checksum(data):
         checksum = sum(data[1:8]) & 0xff
-        return 0xff - checksum + 1
+        return (0xff - checksum + 1) & 0xff
 
